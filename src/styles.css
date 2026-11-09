@@ -1,0 +1,165 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Elias Vance Studio — Refined Dark Hybrid design system.
+ * Near-black warm background, champagne-gold accent, grotesque display + Inter body.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-gold: var(--gold);
+  --color-surface: var(--surface);
+  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 1rem;
+  --background: oklch(0.13 0.004 70);
+  --foreground: oklch(0.95 0.006 80);
+  --surface: oklch(0.18 0.006 70);
+  --card: oklch(0.18 0.006 70);
+  --card-foreground: oklch(0.95 0.006 80);
+  --popover: oklch(0.18 0.006 70);
+  --popover-foreground: oklch(0.95 0.006 80);
+  --primary: oklch(0.83 0.055 85);
+  --primary-foreground: oklch(0.16 0.006 70);
+  --gold: oklch(0.83 0.055 85);
+  --secondary: oklch(0.24 0.006 70);
+  --secondary-foreground: oklch(0.95 0.006 80);
+  --muted: oklch(0.24 0.006 70);
+  --muted-foreground: oklch(0.66 0.012 75);
+  --accent: oklch(0.83 0.055 85);
+  --accent-foreground: oklch(0.16 0.006 70);
+  --destructive: oklch(0.6 0.2 25);
+  --destructive-foreground: oklch(0.98 0.003 80);
+  --border: oklch(0.28 0.006 70);
+  --input: oklch(0.28 0.006 70);
+  --ring: oklch(0.83 0.055 85);
+  --chart-1: oklch(0.83 0.055 85);
+  --chart-2: oklch(0.7 0.04 80);
+  --chart-3: oklch(0.55 0.03 75);
+  --chart-4: oklch(0.4 0.02 70);
+  --chart-5: oklch(0.3 0.01 70);
+  --sidebar: oklch(0.18 0.006 70);
+  --sidebar-foreground: oklch(0.95 0.006 80);
+  --sidebar-primary: oklch(0.83 0.055 85);
+  --sidebar-primary-foreground: oklch(0.16 0.006 70);
+  --sidebar-accent: oklch(0.24 0.006 70);
+  --sidebar-accent-foreground: oklch(0.95 0.006 80);
+  --sidebar-border: oklch(0.28 0.006 70);
+  --sidebar-ring: oklch(0.83 0.055 85);
+}
+
+.dark {
+  --background: oklch(0.13 0.004 70);
+  --foreground: oklch(0.95 0.006 80);
+  --surface: oklch(0.18 0.006 70);
+  --card: oklch(0.18 0.006 70);
+  --card-foreground: oklch(0.95 0.006 80);
+  --popover: oklch(0.18 0.006 70);
+  --popover-foreground: oklch(0.95 0.006 80);
+  --primary: oklch(0.83 0.055 85);
+  --primary-foreground: oklch(0.16 0.006 70);
+  --gold: oklch(0.83 0.055 85);
+  --secondary: oklch(0.24 0.006 70);
+  --secondary-foreground: oklch(0.95 0.006 80);
+  --muted: oklch(0.24 0.006 70);
+  --muted-foreground: oklch(0.66 0.012 75);
+  --accent: oklch(0.83 0.055 85);
+  --accent-foreground: oklch(0.16 0.006 70);
+  --destructive: oklch(0.6 0.2 25);
+  --destructive-foreground: oklch(0.98 0.003 80);
+  --border: oklch(0.28 0.006 70);
+  --input: oklch(0.28 0.006 70);
+  --ring: oklch(0.83 0.055 85);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background-color: var(--color-primary);
+    color: var(--color-primary-foreground);
+  }
+}
+
+@layer utilities {
+  .font-display { font-family: var(--font-display); }
+  .text-balance { text-wrap: balance; }
+  .tracking-tightest { letter-spacing: -0.04em; }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.08s; }
+  .reveal-delay-2 { transition-delay: 0.16s; }
+  .reveal-delay-3 { transition-delay: 0.24s; }
+  .reveal-delay-4 { transition-delay: 0.32s; }
+
+  .ghost-text { color: transparent; -webkit-text-stroke: 1px var(--color-border); }
+
+  .hover-zoom img { transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+  .hover-zoom:hover img { transform: scale(1.06); }
+
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    transition: background-size 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .link-underline:hover { background-size: 100% 1px; }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .animate-marquee { animation: marquee 32s linear infinite; }
+}
